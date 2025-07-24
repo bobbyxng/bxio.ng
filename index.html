@@ -8,18 +8,47 @@
     body {
       font-family: sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       background-color: #f2f2f2;
     }
+
     h1 {
       color: #333;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .dot {
+      animation: blink 1s step-start infinite;
+      color: #ea00ff; /* matches the dark red hover color */
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .github-link img {
+      width: 40px;
+      height: 40px;
+      filter: grayscale(100%) brightness(50%);
+      transition: filter 0.3s;
+    }
+
+    .github-link:hover img {
+      filter: invert(14%) sepia(0%) saturate(800%) hue-rotate(300deg) brightness(100%) contrast(30%);
     }
   </style>
 </head>
 <body>
-  <h1>Hello world bxio.ng!</h1>
+  <a class="github-link" href="https://github.com/bobbyxng" target="_blank" aria-label="GitHub">
+    <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub Logo" />
+  </a>
+  <h1>bxio<span class="dot">.</span>ng</h1>
 </body>
 </html>
